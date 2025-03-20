@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Social User Directory</title>
+    <title>Pursuit Social User Directory 2025</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,12 +14,17 @@
             text-align: center;
             color: #2c3e50;
             margin-bottom: 20px;
-            animation: fadeIn 1s ease-out;
+            animation: dynamicTitle 5s infinite alternate; /* Dynamic title animation */
+            font-size: 2.5em; /* Larger title */
+            font-weight: 700; /* Bold title */
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes dynamicTitle {
+            0% { color: #2c3e50; transform: scale(1); }
+            25% { color: #3498db; transform: scale(1.05); }
+            50% { color: #27ae60; transform: scale(1.1); }
+            75% { color: #e74c3c; transform: scale(1.05); }
+            100% { color: #2c3e50; transform: scale(1); }
         }
 
         form {
@@ -118,7 +123,7 @@
     </style>
 </head>
 <body>
-    <h1>Social User Directory</h1>
+    <h1>Pursuit Social User Directory 2025</h1>
 
     <form id="userForm">
         <label for="name">Name:</label><br>
