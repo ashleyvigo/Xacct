@@ -14,9 +14,9 @@
             text-align: center;
             color: #2c3e50;
             margin-bottom: 20px;
-            animation: dynamicTitle 5s infinite alternate;
-            font-size: 2.5em;
-            font-weight: 700;
+            animation: dynamicTitle 5s infinite alternate; /* Dynamic title animation */
+            font-size: 2.5em; /* Larger title */
+            font-weight: 700; /* Bold title */
         }
 
         @keyframes dynamicTitle {
