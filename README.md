@@ -3,7 +3,6 @@
 <head>
     <title>Social User Directory</title>
     <style>
-        /* ... (CSS styles remain the same) ... */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 20px;
@@ -125,9 +124,6 @@
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br><br>
 
-        <label for="xUsername">X Username (@):</label><br>
-        <input type="text" id="xUsername" name="xUsername"><br><br>
-
         <label for="xProfileLink">X Profile Link:</label><br>
         <input type="text" id="xProfileLink" name="xProfileLink"><br><br>
 
@@ -146,7 +142,6 @@
         <thead>
             <tr>
                 <th>Name</th>
-                <th>X Username</th>
                 <th>X Profile Link</th>
                 <th>Instagram</th>
                 <th>LinkedIn</th>
@@ -159,13 +154,12 @@
     <script>
         function addUser() {
             const name = document.getElementById("name").value;
-            const xUsername = document.getElementById("xUsername").value;
             const xProfileLink = document.getElementById("xProfileLink").value;
             const instagramProfile = document.getElementById("instagramProfile").value;
             const linkedinProfile = document.getElementById("linkedinProfile").value;
 
-            if (name && xUsername && xProfileLink && instagramProfile && linkedinProfile) {
-                const user = { name, xUsername, xProfileLink, instagramProfile, linkedinProfile };
+            if (name && xProfileLink && instagramProfile && linkedinProfile) {
+                const user = { name, xProfileLink, instagramProfile, linkedinProfile };
                 let users = JSON.parse(localStorage.getItem("xUsers")) || [];
                 users.push(user);
                 localStorage.setItem("xUsers", JSON.stringify(users));
@@ -184,13 +178,11 @@
             users.forEach(user => {
                 const row = tableBody.insertRow();
                 const nameCell = row.insertCell(0);
-                const xUsernameCell = row.insertCell(1);
-                const xProfileLinkCell = row.insertCell(2);
-                const instagramCell = row.insertCell(3);
-                const linkedinCell = row.insertCell(4);
+                const xProfileLinkCell = row.insertCell(1);
+                const instagramCell = row.insertCell(2);
+                const linkedinCell = row.insertCell(3);
 
                 nameCell.textContent = user.name;
-                xUsernameCell.textContent = user.xUsername;
                 xProfileLinkCell.innerHTML = `<a href="${user.xProfileLink}" target="_blank">${user.xProfileLink}</a>`;
                 instagramCell.innerHTML = `<a href="${user.instagramProfile}" target="_blank">${user.instagramProfile}</a>`;
                 linkedinCell.innerHTML = `<a href="${user.linkedinProfile}" target="_blank">${user.linkedinProfile}</a>`;
